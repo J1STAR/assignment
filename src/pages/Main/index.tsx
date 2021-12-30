@@ -5,23 +5,27 @@ const Home: FC = () => {
   const [year, setYear] = useState<number>(new Date().getFullYear());
   const [month, setMonth] = useState<number>(new Date().getMonth() + 1);
 
-  const beforeMonth = useCallback(() => {}, []);
+  const beforeMonth = useCallback(() => {
+    if (month === 1) {
+      setYear(year - 1);
+      setMonth(12);
+    } else {
+      setMonth(month - 1);
+    }
+  }, [year, month]);
 
-  // let { year, month } = this.state;
-  // if (this.state.month === 1) {
-  //     year--;
-  //     month = 12;
-  // }
-  // else {
-  //     month--;
-  // }
-
-  // let historys = await this.getAllHistory(year, month)
-  // this.setState({ year, month, historys, type: MONTHLY_HISTORY });
+  const afterMonth = useCallback(() => {
+    if (month === 12) {
+      setYear(year + 1);
+      setMonth(1);
+    } else {
+      setMonth(month + 1);
+    }
+  }, [year, month]);
 
   return (
     <>
-      <Header year={year} month={month} />
+      <Header year={year} month={month} beforeMonth={beforeMonth} afterMonth={afterMonth} />
     </>
   );
 };
