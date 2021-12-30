@@ -15,7 +15,7 @@ const Header: FC<Props> = ({ year, month, beforeMonth, afterMonth }) => {
     <Wrapper>
       <Arrow src={leftArrow} alt="left-arrow" onClick={beforeMonth} />
       <Date>
-        {year}.{month}
+        {year}.{month >= 10 ? month : `0${month}`}
       </Date>
       <Arrow src={rightArrow} alt="right-arrow" onClick={afterMonth} />
     </Wrapper>
