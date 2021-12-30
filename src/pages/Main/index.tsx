@@ -1,5 +1,6 @@
 import { FC, useState, useCallback } from 'react';
 import Header from '@/components/Header';
+import Calendar from '@/components/Calendar';
 
 const Home: FC = () => {
   const [year, setYear] = useState<number>(new Date().getFullYear());
@@ -26,6 +27,7 @@ const Home: FC = () => {
   return (
     <>
       <Header year={year} month={month} beforeMonth={beforeMonth} afterMonth={afterMonth} />
+      <Calendar year={year} month={month} />
     </>
   );
 };
