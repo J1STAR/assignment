@@ -5,6 +5,10 @@ export const Wrapper = styled.header`
   gap: 1%;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 576px) {
+    min-width: 250px;
+  }
 `;
 
 export const Date = styled.div`

@@ -6,10 +6,8 @@ import { request } from '@/util/api';
 import { JopData } from '@/util/types';
 
 const Home: FC = () => {
-  const [year, setYear] = useState<number>(2021);
-  const [month, setMonth] = useState<number>(9);
-  // const [year, setYear] = useState<number>(new Date().getFullYear());
-  // const [month, setMonth] = useState<number>(new Date().getMonth() + 1);
+  const [year, setYear] = useState<number>(new Date().getFullYear());
+  const [month, setMonth] = useState<number>(new Date().getMonth() + 1);
   const [jobData, setJopData] = useState<JopData[]>([]);
   const [isModalOpen, SetIsModalOpen] = useState<boolean>(false);
   const [selectedJob, setSelectedJob] = useState<JopData>(null);

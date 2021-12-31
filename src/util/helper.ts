@@ -23,10 +23,9 @@ export const translateDate = (date: string): string => {
 };
 
 /**
- * 마감일과 현재 일수와의 차이
+ * 마감일과 현재 일수와의 차이를 계산
  */
 export const calTimeDiff = (date: string): number => {
   const diff = (new Date().getTime() - new Date(date).getTime()) / (1000 * 60 * 60 * 24);
-
   return Math.round(diff);
 };

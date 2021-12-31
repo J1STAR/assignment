@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Date } from '../Header/index.style';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -18,6 +19,10 @@ export const Daybar = styled.ul`
   height: 3vh;
   width: 90%;
   font-size: 0.9rem;
+
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
 
   > li {
     height: 100%;
@@ -47,6 +52,11 @@ export const Day = styled.li`
   border-style: solid;
   border-color: var(--borderGrey);
   border-width: 0 1px 1px 0;
+
+  @media screen and (max-width: 576px) {
+    width: 100%;
+    min-width: 250px;
+  }
 `;
 
 export const DayHead = styled.div`

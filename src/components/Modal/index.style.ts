@@ -29,7 +29,7 @@ export const ModalInner = styled.div`
   background-color: #fff;
   border-radius: 5px;
   width: 58vw;
-  height: 85vh;
+  height: 90vh;
   top: 50%;
   transform: translateY(-50%);
   margin: 0 auto;
@@ -38,5 +38,13 @@ export const ModalInner = styled.div`
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
     display: none;
+  }
+  @media screen and (max-width: 576px) {
+    width: 95vw;
+    min-width: 250px;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 90vw;
   }
 `;

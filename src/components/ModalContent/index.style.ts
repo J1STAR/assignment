@@ -23,7 +23,7 @@ export const Info = styled.div`
 `;
 
 export const Name = styled.div`
-  font-size: 1.5em;
+  font-size: 1.3vw;
   margin-bottom: 2vh;
 `;
 
@@ -33,11 +33,11 @@ export const TimeWrapper = styled.div`
 `;
 
 export const Time = styled.div`
-  font-size: 1.2em;
+  font-size: 1.1vw;
   margin-right: 0.5vw;
 `;
 
 export const Diff = styled.div`
-  font-size: 1.2em;
+  font-size: 1.1vw;
   color: var(--orange);
 `;
