@@ -2,9 +2,14 @@
 
 :root {
   --orange: #ff6813;
-  --lightGrey: #9e9e9e;
+  --darkGrey: #5c5b5b;
+  --lightGrey: #b6b6b6;
+  --whiteGrey: #f2f2f2;
+  --borderGrey: #e6e6e6;
+  --fontGrey: #2d2d2d;
+  --endColor: #3f4b5d;
 }
 
-body{
-    margin: 10px 20px;
+body {
+  margin: 10px 20px;
 }
