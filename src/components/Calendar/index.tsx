@@ -1,12 +1,12 @@
 import { FC, useState, useEffect } from 'react';
 import { Wrapper, Daybar, DayWrapper, Day, DayHead, JobWrapper, Job, Status } from './index.style';
-import { CalendarDate, JopData } from '@/util/types';
+import { CalendarProps, JopData } from '@/util/types';
 import { IsSameDay } from '@/util/helper';
 
 /**
  * 달력을 표시하는 컴포넌트
  */
-const Header: FC<CalendarDate> = ({ year, month, jobData }) => {
+const Header: FC<CalendarProps> = ({ year, month, jobData, handleJobClick }) => {
   /**
    * dates: 날짜정보
    * jobs: 채용공고
@@ -134,7 +134,7 @@ const Header: FC<CalendarDate> = ({ year, month, jobData }) => {
               <DayHead>{day}</DayHead>
               <JobWrapper>
                 {jobs[index].map((job) => (
-                  <Job key={job.id}>
+                  <Job key={job.id} data-id={job.id} onClick={handleJobClick}>
                     <Status status={job.status}>{job.status === 'S' ? '시' : '끝'}</Status>
                     <div>{job.name}</div>
                   </Job>

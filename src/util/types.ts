@@ -8,8 +8,19 @@ export interface JopData {
   status?: 'S' | 'E';
 }
 
-export interface CalendarDate {
+export interface CalendarProps {
   year: number;
   month: number;
   jobData: JopData[];
+  handleJobClick: (e: MouseEvent) => void;
+}
+
+export interface ModalProps {
+  visible: boolean;
+  removeModal: () => void;
+  job: JopData;
+}
+
+export interface ModalContentProps {
+  job: JopData;
 }
