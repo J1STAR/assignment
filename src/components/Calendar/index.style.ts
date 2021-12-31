@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Date } from '../Header/index.style';
 
 export const Wrapper = styled.div`
   display: flex;

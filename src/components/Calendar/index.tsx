@@ -1,21 +1,17 @@
 import { FC, useState, useEffect } from 'react';
+import { CalendarProps, JopData } from '@/utils/types';
+import { IsSameDay } from '@/utils/helper';
 import { Wrapper, Daybar, DayWrapper, Day, DayHead, JobWrapper, Job, Status } from './index.style';
-import { CalendarProps, JopData } from '@/util/types';
-import { IsSameDay } from '@/util/helper';
 
 /**
- * 달력을 표시하는 컴포넌트
+ * 달력
  */
 const Header: FC<CalendarProps> = ({ year, month, jobData, handleJobClick }) => {
-  /**
-   * dates: 날짜정보
-   * jobs: 채용공고
-   */
   const [dates, setDates] = useState<string[]>([]);
   const [jobs, setJobs] = useState<JopData[][]>([]);
 
   /**
-   * 연,월에 해당하는 날짜 및 채용정보를 세팅합니다.
+   * 연,월에 해당하는 날짜 및 채용정보를 세팅
    */
   const setDatesAndJobs = (year: number, month: number): void => {
     const viewYear = year;
@@ -75,7 +71,7 @@ const Header: FC<CalendarProps> = ({ year, month, jobData, handleJobClick }) => 
   };
 
   /**
-   * 날짜에 해당하는 채용정보를 찾습니다.
+   * 날짜에 해당하는 채용정보를 매핑
    */
   const mappingJobData = (year: number, month: number, day: string): JopData[] => {
     const baseDate = new Date(`${year}-${month}-${day}`);
@@ -98,7 +94,7 @@ const Header: FC<CalendarProps> = ({ year, month, jobData, handleJobClick }) => 
   };
 
   /**
-   * 채용공고를 정렬합니다.
+   * 채용공고를 정렬
    */
   const sortJobs = (jobs: JopData[][]): JopData[][] => {
     jobs.map((job) => {

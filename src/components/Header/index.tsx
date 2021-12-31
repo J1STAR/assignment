@@ -1,16 +1,13 @@
 import { FC } from 'react';
-import { Wrapper, Date, Arrow } from './index.style';
 import leftArrow from '@/assets/left-arrow.svg';
 import rightArrow from '@/assets/right-arrow.svg';
+import { HeaderProps } from '@/utils/types';
+import { Wrapper, Date, Arrow } from './index.style';
 
-interface Props {
-  year: number;
-  month: number;
-  beforeMonth: () => void;
-  afterMonth: () => void;
-}
-
-const Header: FC<Props> = ({ year, month, beforeMonth, afterMonth }) => {
+/**
+ * 상단 연/월 네비게이터
+ */
+const Header: FC<HeaderProps> = ({ year, month, beforeMonth, afterMonth }) => {
   return (
     <Wrapper>
       <Arrow src={leftArrow} alt="left-arrow" onClick={beforeMonth} />

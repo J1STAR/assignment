@@ -1,9 +1,12 @@
 import { FC, useRef } from 'react';
-import useOnClickOutside from '@/util/hooks/useOnClickOutside';
-import { ModalOverlay, ModalWrapper, ModalInner } from './index.style';
-import { ModalProps } from '@/util/types';
+import useOnClickOutside from '@/utils/hooks/useOnClickOutside';
+import { ModalProps } from '@/utils/types';
 import ModalContent from '@/components/ModalContent';
+import { ModalOverlay, ModalWrapper, ModalInner } from './index.style';
 
+/**
+ * 모달 레이아웃
+ */
 const Modal: FC<ModalProps> = ({ visible, removeModal, job }) => {
   const modalRef = useRef(null);
 

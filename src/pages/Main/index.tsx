@@ -2,18 +2,21 @@ import { FC, useState, useCallback, useEffect } from 'react';
 import Header from '@/components/Header';
 import Calendar from '@/components/Calendar';
 import Modal from '@/components/Modal';
-import { request } from '@/util/api';
-import { JopData } from '@/util/types';
+import { request } from '@/utils/api';
+import { JopData } from '@/utils/types';
 
+/**
+ * 루트 경로 페이지
+ */
 const Home: FC = () => {
   const [year, setYear] = useState<number>(new Date().getFullYear());
   const [month, setMonth] = useState<number>(new Date().getMonth() + 1);
   const [jobData, setJopData] = useState<JopData[]>([]);
   const [isModalOpen, SetIsModalOpen] = useState<boolean>(false);
-  const [selectedJob, setSelectedJob] = useState<JopData>(null);
+  const [selectedJob, setSelectedJob] = useState<JopData | null>(null);
 
   /**
-   * 헤더의 이전 버튼 클릭
+   * 네비게이터에서 이전 버튼 클릭
    */
   const beforeMonth = useCallback(() => {
     if (month === 1) {
@@ -25,7 +28,7 @@ const Home: FC = () => {
   }, [year, month]);
 
   /**
-   * 헤더의 이후 버튼 클릭
+   * 네비게이터에서 이후 버튼 클릭
    */
   const afterMonth = useCallback(() => {
     if (month === 12) {
@@ -37,7 +40,7 @@ const Home: FC = () => {
   }, [year, month]);
 
   /**
-   * 채용공고 데이터 요청
+   * 채용공고 데이터 설정
    */
   const getInformation = async () => {
     const data = await request();

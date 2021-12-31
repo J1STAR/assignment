@@ -1,12 +1,17 @@
 import { FC } from 'react';
-import { ModalContentProps } from '@/util/types';
+import { ModalContentProps } from '@/utils/types';
+import { translateDate, calTimeDiff } from '@/utils/helper';
 import { Head, Content, Logo, Name, TimeWrapper, Time, Info, Diff } from './index.style';
-import { translateDate, calTimeDiff } from '@/util/helper';
 
+/**
+ * 모달 내부 내용
+ */
 const ModalContent: FC<ModalContentProps> = ({ job }) => {
+  /**
+   * 날짜 경과 표시
+   */
   const getTimeDiff = (date: string): string => {
     const diff: number = calTimeDiff(date);
-
     if (diff > 0) {
       return `${diff}일 지남`;
     }

@@ -8,6 +8,13 @@ export interface JopData {
   status?: 'S' | 'E';
 }
 
+export interface HeaderProps {
+  year: number;
+  month: number;
+  beforeMonth: () => void;
+  afterMonth: () => void;
+}
+
 export interface CalendarProps {
   year: number;
   month: number;
@@ -18,7 +25,7 @@ export interface CalendarProps {
 export interface ModalProps {
   visible: boolean;
   removeModal: () => void;
-  job: JopData;
+  job: JopData | null;
 }
 
 export interface ModalContentProps {

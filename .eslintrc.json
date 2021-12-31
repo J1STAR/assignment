@@ -39,7 +39,8 @@
     "no-constant-condition": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-shadow": "off",
-    "array-callback-return": "off"
+    "array-callback-return": "off",
+    "react/no-array-index-key": "off"
   },
   "ignorePatterns": [".eslintrc.json", "webpack.config.js", "webpack.config.*.js"]
 }
