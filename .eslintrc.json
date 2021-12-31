@@ -36,7 +36,10 @@
     "import/extensions": ["off"],
     "import/prefer-default-export": "off",
     "no-plusplus": "off",
-    "no-constant-condition": "off"
+    "no-constant-condition": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "array-callback-return": "off"
   },
   "ignorePatterns": [".eslintrc.json", "webpack.config.js", "webpack.config.*.js"]
 }
