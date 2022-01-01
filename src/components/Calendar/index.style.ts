@@ -79,9 +79,9 @@ export const Job = styled.li`
 `;
 
 export const Status = styled.div<{ status?: 'E' | 'S' }>`
-  font-size: 1.1vh;
-  width: 1.4vh;
-  height: 1.4vh;
+  font-size: 0.9vh;
+  width: 1.5vh;
+  height: 1.5vh;
   color: white;
   border-radius: 3px;
   font-weight: bold;
