@@ -74,6 +74,7 @@ export const Job = styled.li`
   display: flex;
   margin: 0.5vh 0;
   font-size: 1.5vh;
+  align-items: center;
   cursor: pointer;
 `;
 
