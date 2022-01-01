@@ -1,14 +1,19 @@
-import { FC, useRef } from 'react';
+import { FC, useRef, useContext } from 'react';
+import ModalContent from '@/components/ModalContent';
+import { Context } from '@/context';
 import useOnClickOutside from '@/utils/hooks/useOnClickOutside';
 import { ModalProps } from '@/utils/types';
-import ModalContent from '@/components/ModalContent';
 import { ModalOverlay, ModalWrapper, ModalInner } from './index.style';
 
 /**
  * 모달 레이아웃
  */
-const Modal: FC<ModalProps> = ({ visible, removeModal, job }) => {
+const Modal: FC<ModalProps> = ({ visible, removeModal }) => {
   const modalRef = useRef(null);
+
+  const {
+    state: { selectedJob },
+  } = useContext(Context);
 
   /**
    * 모달 외부 클릭 커스텀 훅
@@ -22,7 +27,7 @@ const Modal: FC<ModalProps> = ({ visible, removeModal, job }) => {
       <ModalOverlay visible={visible} />
       <ModalWrapper visible={visible}>
         <ModalInner ref={modalRef} className="modal-inner">
-          {job && <ModalContent job={job} />}
+          {selectedJob && <ModalContent />}
         </ModalInner>
       </ModalWrapper>
     </>

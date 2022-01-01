@@ -1,4 +1,5 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState, useEffect, useContext } from 'react';
+import { Context } from '@/context';
 import { CalendarProps, JopData } from '@/utils/types';
 import { IsSameDay } from '@/utils/helper';
 import { Wrapper, Daybar, DayWrapper, Day, DayHead, JobWrapper, Job, Status } from './index.style';
@@ -6,9 +7,14 @@ import { Wrapper, Daybar, DayWrapper, Day, DayHead, JobWrapper, Job, Status } fr
 /**
  * 달력
  */
-const Header: FC<CalendarProps> = ({ year, month, jobData, handleJobClick }) => {
+const Calendar: FC<CalendarProps> = ({ handleJobClick }) => {
   const [dates, setDates] = useState<string[]>([]);
   const [jobs, setJobs] = useState<JopData[][]>([]);
+
+  const {
+    state: { year, month, jobData },
+    dispatch,
+  } = useContext(Context);
 
   /**
    * 연,월에 해당하는 날짜 및 채용정보를 세팅
@@ -77,7 +83,7 @@ const Header: FC<CalendarProps> = ({ year, month, jobData, handleJobClick }) => 
     const baseDate = new Date(`${year}-${month}-${day}`);
     const jobs: JopData[] = [];
 
-    jobData.forEach((job) => {
+    jobData.forEach((job: JopData) => {
       const startDate = new Date(job.start_time);
       const endDate = new Date(job.end_time);
 
@@ -143,4 +149,4 @@ const Header: FC<CalendarProps> = ({ year, month, jobData, handleJobClick }) => 
   );
 };
 
-export default Header;
+export default Calendar;
