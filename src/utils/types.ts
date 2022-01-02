@@ -1,3 +1,6 @@
+/**
+ * 채용공고
+ */
 export interface JopData {
   id: number;
   name: string;
@@ -8,10 +11,16 @@ export interface JopData {
   status?: 'S' | 'E';
 }
 
+/**
+ * 달력 props
+ */
 export interface CalendarProps {
   handleJobClick: (e: MouseEvent) => void;
 }
 
+/**
+ * 모달 props
+ */
 export interface ModalProps {
   visible: boolean;
   removeModal: () => void;

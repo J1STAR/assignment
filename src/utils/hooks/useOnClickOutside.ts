@@ -2,6 +2,9 @@ import { useEffect, RefObject } from 'react';
 
 type AnyEvent = MouseEvent | TouchEvent;
 
+/**
+ * 요소 외부 클릭 커스텀 훅
+ */
 const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
   ref: RefObject<T>,
   handler: (event: AnyEvent) => void,
@@ -24,8 +27,6 @@ const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
       document.removeEventListener(`mousedown`, listener);
       document.removeEventListener(`touchstart`, listener);
     };
-
-    // Reload only if ref or handler changes
   }, [ref, handler]);
 };
 
