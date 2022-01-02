@@ -13,7 +13,6 @@ const Calendar: FC<CalendarProps> = ({ handleJobClick }) => {
 
   const {
     state: { year, month, jobData },
-    dispatch,
   } = useContext(Context);
 
   /**
