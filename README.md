@@ -9,7 +9,7 @@
 
 - React.js
 - Typescript
-- Context Api (상태관리)
+- Context Api
 - Webpack
 - Eslint, Prettier
 
@@ -17,7 +17,9 @@
 
 ## 실행방법
 
-start
-dev
-build
-precommit
+- npm run(or yarn) start => development 모드 빌드
+- npm run(or yarn) dev => dev server 시작
+- npm run(or yarn) build => production 모드 빌드
+- npm run(or yarn) lint:fix => lint 규칙에 맞게 수정
+- npm run(or yarn) prettier:write => prettier 규칙에 맞게 수정
+- npm run(or yarn) precommit => lint:fix와 prettier:write 수행 
